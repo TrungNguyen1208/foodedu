@@ -44,5 +44,6 @@ class AppColor {
   static const Color facebook = Color(0xff4460A0);
   static const Color google = Color(0xff4285F4);
 
-  static const Color defaultText = Color(0xff464646);
+  static const Color defaultText = Color(0xff4F585E);
+  static const Color borderTextField = Color(0xffDBDFE3);
 }
