@@ -13,6 +13,7 @@ class FoodApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Foodude',
+      debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       home: SignInScreen(),
     );
@@ -22,7 +23,7 @@ class FoodApp extends StatelessWidget {
 class TestDemoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
 
     );
   }
