@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:foodedu/general/constant/app_theme.dart';
 
-class SocialLoginButton extends StatelessWidget {
+class SocialButton extends StatelessWidget {
   final String title;
   final String image;
   final VoidCallback onPress;
   final Color color, textColor;
 
-  const SocialLoginButton({
+  const SocialButton({
     Key key,
     @required this.title,
     @required this.image,

@@ -63,6 +63,7 @@ flutter:
         - asset: assets/fonts/AvenirNextLTPro-Regular.ttf
         - asset: assets/fonts/AvenirNextLTPro-Demi.ttf
         - asset: assets/fonts/AvenirNextLTPro-Medium.ttf
+        - asset: assets/fonts/AvenirNextLTPro-Bold.otf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:foodedu/feature/widget/authen/right_link_text.dart';
-import 'package:foodedu/feature/widget/authen/social_login_button.dart';
-import 'package:foodedu/feature/widget/common/primary_button.dart';
+import 'package:foodedu/commom/text/right_link_text.dart';
+import 'package:foodedu/commom/button/social_login_button.dart';
+import 'package:foodedu/commom/button/primary_button.dart';
 import 'package:foodedu/general/constant/app_constant.dart';
 import 'package:foodedu/general/constant/app_theme.dart';
 
@@ -81,13 +81,13 @@ class _SignInScreenState extends State<SignInScreen> {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: AppMargin.litterBig),
-            const SocialLoginButton(
+            const SocialButton(
               title: 'Continue with facebook',
               image: 'assets/images/facebook.png',
               color: AppColor.facebook,
             ),
             const SizedBox(height: AppMargin.big),
-            const SocialLoginButton(
+            const SocialButton(
               title: 'Continue with google',
               image: 'assets/images/google.png',
               color: AppColor.google,
