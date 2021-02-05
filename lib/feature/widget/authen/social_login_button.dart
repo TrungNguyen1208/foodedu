@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:foodedu/general/constant/app_constant.dart';
 import 'package:foodedu/general/constant/app_theme.dart';
 
 class SocialLoginButton extends StatelessWidget {
@@ -30,17 +29,27 @@ class SocialLoginButton extends StatelessWidget {
         highlightColor: Colors.transparent,
         color: color,
         textColor: textColor,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
+        child: Stack(
           children: <Widget>[
-            Image.asset(image, width: 30, height: 30, fit: BoxFit.cover),
-            const SizedBox(width: AppMargin.bigger),
-            Text(title.toUpperCase(),
-                style: Theme.of(context)
-                    .textTheme
-                    .subtitle1
-                    .copyWith(color: textColor, fontSize: 14.0)),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Image.asset(image, width: 30, height: 30, fit: BoxFit.cover),
+              ],
+            ),
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 40),
+                child: Text(title.toUpperCase(),
+                    maxLines: 2,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context)
+                        .textTheme
+                        .subtitle1
+                        .copyWith(color: textColor, fontSize: 14.0)),
+              ),
+            ),
           ],
         ),
       ),

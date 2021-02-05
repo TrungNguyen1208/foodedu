@@ -45,5 +45,5 @@ class AppColor {
   static const Color google = Color(0xff4285F4);
 
   static const Color defaultText = Color(0xff4F585E);
-  static const Color borderTextField = Color(0xffDBDFE3);
+  static const Color borderTextField = Color(0xffa7aaab);
 }

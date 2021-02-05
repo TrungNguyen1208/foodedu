@@ -16,8 +16,8 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   void initState() {
     super.initState();
-    _focusEmail = new FocusNode();
-    _focusPassword = new FocusNode();
+    _focusEmail = FocusNode();
+    _focusPassword = FocusNode();
     _focusEmail.addListener(_onFocusNodeEvent);
     _focusPassword.addListener(_onFocusNodeEvent);
   }
@@ -30,9 +30,9 @@ class _SignInScreenState extends State<SignInScreen> {
   }
 
   void _onFocusNodeEvent() {
-    setState(() {
-      // Re-renders
-    });
+    // setState(() {
+    //   // Re-renders
+    // });
   }
 
   @override
@@ -104,9 +104,8 @@ class _SignInScreenState extends State<SignInScreen> {
         textInputAction: TextInputAction.next,
         keyboardAppearance: Brightness.light,
         keyboardType: TextInputType.emailAddress,
-        // style: AppTheme.kRegularTextStyle.copyWith(
-        //   color: AppColor.subLabel,
-        // ),
+        maxLength: LimitText.emailAddressMaxLength,
+        style: Theme.of(context).textTheme.bodyText1.copyWith(color: AppColor.darkGrayHighlighted),
         cursorColor: AppColor.darkGrayHighlighted,
         decoration: InputDecoration(
           alignLabelWithHint: true,
@@ -118,20 +117,21 @@ class _SignInScreenState extends State<SignInScreen> {
             borderRadius: BorderRadius.circular(5.0),
             borderSide: const BorderSide(color: AppColor.borderTextField, width: 1),
           ),
-          labelText: 'Email Address',
-          labelStyle: Theme.of(context).textTheme.bodyText1,
+          counterText: '',
+          labelText: 'Email',
+          labelStyle: Theme.of(context).textTheme.bodyText1.copyWith(color: AppColor.darkGrayHighlighted),
         ),
       ),
       const SizedBox(height: 20),
       TextField(
-        focusNode: _focusEmail,
+        focusNode: _focusPassword,
         maxLines: 1,
-        textInputAction: TextInputAction.next,
+        obscureText: true,
+        textInputAction: TextInputAction.done,
         keyboardAppearance: Brightness.light,
-        keyboardType: TextInputType.emailAddress,
-        // style: AppTheme.kRegularTextStyle.copyWith(
-        //   color: AppColor.subLabel,
-        // ),
+        keyboardType: TextInputType.visiblePassword,
+        maxLength: LimitText.passwordMaxLength,
+        style: Theme.of(context).textTheme.bodyText1.copyWith(color: AppColor.darkGrayHighlighted),
         cursorColor: AppColor.darkGrayHighlighted,
         decoration: InputDecoration(
           alignLabelWithHint: true,
@@ -143,8 +143,9 @@ class _SignInScreenState extends State<SignInScreen> {
             borderRadius: BorderRadius.circular(5.0),
             borderSide: const BorderSide(color: AppColor.borderTextField, width: 1),
           ),
+          counterText: '',
           labelText: 'Password',
-          labelStyle: Theme.of(context).textTheme.bodyText1,
+          labelStyle: Theme.of(context).textTheme.bodyText1.copyWith(color: AppColor.darkGrayHighlighted),
         ),
       ),
     ]);
