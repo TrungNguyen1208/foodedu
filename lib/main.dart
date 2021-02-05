@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'feature/sign_in/sign_in_screen.dart';
+import 'feature/authen/sign_in/sign_in_screen.dart';
 import 'general/constant/app_theme.dart';
 
 void main() {

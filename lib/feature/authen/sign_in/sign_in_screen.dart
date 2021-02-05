@@ -84,11 +84,13 @@ class _SignInScreenState extends State<SignInScreen> {
             const SocialLoginButton(
               title: 'Continue with facebook',
               image: 'assets/images/facebook.png',
+              color: AppColor.facebook,
             ),
             const SizedBox(height: AppMargin.big),
             const SocialLoginButton(
               title: 'Continue with google',
               image: 'assets/images/google.png',
+              color: AppColor.google,
             ),
           ],
         ),
