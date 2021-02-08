@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'feature/authen/sign_in/sign_in_screen.dart';
+import 'feature/main_tab/main_tab_view.dart';
 import 'general/constant/app_theme.dart';
 import 'routues/routues.dart';
 
@@ -24,7 +24,7 @@ class FoodApp extends StatelessWidget {
         title: 'Foodude',
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
-        home: SignInScreen(),
+        home: MainTabView(),
         onGenerateRoute: Routes.buildRoutes,
       ),
     );
