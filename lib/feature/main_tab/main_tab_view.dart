@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:foodedu/commom/image/nav_bar_image.dart';
 import 'package:foodedu/general/constant/app_theme.dart';
-
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:line_icons/line_icons.dart';
 
 class MainTabView extends StatefulWidget {
   @override
@@ -11,33 +10,40 @@ class MainTabView extends StatefulWidget {
 
 class _MainTabViewState extends State<MainTabView> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Likes',
-      style: optionStyle,
-    ),
-    Text(
-      'Search',
-      style: optionStyle,
-    ),
-    Text(
-      'Profile',
-      style: optionStyle,
-    ),
+
+  final PageController _pageController = PageController(initialPage: 0, keepPage: true,);
+  static const List<Color> colors = [
+    Colors.purple,
+    Colors.pink,
+    Colors.amber,
+    Colors.teal
   ];
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+      body: PageView.builder(
+        physics: const ClampingScrollPhysics(),
+        itemCount: 4,
+        onPageChanged: _onPageChanged,
+        controller: _pageController,
+        itemBuilder: (context, position) {
+          return Container(
+            color: colors[position],
+          );
+        },
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
@@ -50,39 +56,50 @@ class _MainTabViewState extends State<MainTabView> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
             child: GNav(
-              rippleColor: Colors.grey[300],
-              hoverColor: Colors.grey[100],
+              rippleColor: Colors.grey[400],
+              hoverColor: Colors.grey[300],
               gap: 8.0,
               activeColor: AppColor.primary,
               iconSize: 24,
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
               duration: const Duration(milliseconds: 400),
-              tabBackgroundColor: Colors.grey[100],
               textStyle: const TextStyle(
                 color: AppColor.primary,
                 fontFamily: AppFont.aveNextLT,
                 fontWeight: FontWeight.w600,
                 fontSize: 14.0,
               ),
-              tabs: const <GButton>[
+              tabs: <GButton>[
                 GButton(
                   backgroundColor: AppColor.bgNavBar,
-                  icon: LineIcons.home,
+                  leading: NavBarImage(
+                    imagePath: 'assets/images/home.png',
+                    isSelected: _selectedIndex == 0,
+                  ),
                   text: 'Home',
                 ),
                 GButton(
                   backgroundColor: AppColor.bgNavBar,
-                  icon: LineIcons.heart_o,
+                  leading: NavBarImage(
+                    imagePath: 'assets/images/shopping_bag.png',
+                    isSelected: _selectedIndex == 1,
+                  ),
                   text: 'Orders',
                 ),
                 GButton(
                   backgroundColor: AppColor.bgNavBar,
-                  icon: LineIcons.search,
+                  leading: NavBarImage(
+                    imagePath: 'assets/images/heart.png',
+                    isSelected: _selectedIndex == 2,
+                  ),
                   text: 'Saved',
                 ),
                 GButton(
                   backgroundColor: AppColor.bgNavBar,
-                  icon: LineIcons.user,
+                  leading: NavBarImage(
+                    imagePath: 'assets/images/user.png',
+                    isSelected: _selectedIndex == 3,
+                  ),
                   text: 'Profile',
                 ),
               ],
@@ -98,6 +115,13 @@ class _MainTabViewState extends State<MainTabView> {
   void _onTabChange(int index) {
     setState(() {
       _selectedIndex = index;
+    });
+    _pageController.jumpToPage(index);
+  }
+
+  void _onPageChanged(int page) {
+    setState(() {
+      _selectedIndex = page;
     });
   }
 }

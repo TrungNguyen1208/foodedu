@@ -28,7 +28,6 @@ dependencies:
   cupertino_icons: ^1.0.0
   cached_network_image: ^2.5.0
   google_nav_bar: ^4.0.2
-  line_icons: ^0.2.0
 
 dev_dependencies:
   pedantic: ^1.9.0
