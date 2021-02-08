@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'feature/authen/sign_in/sign_in_screen.dart';
 import 'general/constant/app_theme.dart';
+import 'routues/routues.dart';
 
 void main() {
   runApp(FoodApp());
@@ -14,7 +15,7 @@ class FoodApp extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         // https://flutterigniter.com/dismiss-keyboard-form-lose-focus/
-        final FocusScopeNode currentFocus = FocusScope.of(context);
+        final currentFocus = FocusScope.of(context);
         if (!currentFocus.hasPrimaryFocus && currentFocus.focusedChild != null) {
           currentFocus.focusedChild.unfocus();
         }
@@ -24,6 +25,7 @@ class FoodApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
         home: SignInScreen(),
+        onGenerateRoute: Routes.buildRoutes,
       ),
     );
   }

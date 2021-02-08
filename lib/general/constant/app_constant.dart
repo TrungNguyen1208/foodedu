@@ -5,7 +5,7 @@ class AppMargin {
   static const double normal = 8.0;
   static const double slightlyBig = 12.0;
   static const double big = 16.0;
-  static const double litterBig = 24.0;
+  static const double litterBigger = 24.0;
   static const double bigger = 32.0;
   static const double biggest = 64.0;
 
@@ -28,7 +28,7 @@ class AppRegex {
   // ignore: use_raw_strings
   static const String passwordSymbols = '#?!@\$%^&*-';
   static const String passwordInvalidCharacter =
-      '[^A-Za-z0-9' + passwordSymbols + ']';
+      '[^A-Za-z0-9$passwordSymbols]';
   static const String phoneNumberInvalidCharacter = '[^0-9]';
 }
 

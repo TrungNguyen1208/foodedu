@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:foodedu/commom/container/social_login_container.dart';
 import 'package:foodedu/commom/text/right_link_text.dart';
-import 'package:foodedu/commom/button/social_login_button.dart';
 import 'package:foodedu/commom/button/primary_button.dart';
 import 'package:foodedu/general/constant/app_constant.dart';
 import 'package:foodedu/general/constant/app_theme.dart';
+import 'package:foodedu/routues/routue_name.dart';
 
 class SignInScreen extends StatefulWidget {
   @override
@@ -54,9 +55,10 @@ class _SignInScreenState extends State<SignInScreen> {
               textAlign: TextAlign.left,
             ),
             const SizedBox(height: AppMargin.big),
-            const RightLinkText(
+            RightLinkText(
               textLeft: 'Don’t have an account?',
               textRight: 'Sign up now!',
+              onPressedLink: _onPressSignUp,
             ),
             const SizedBox(height: AppMargin.bigger),
             _buildInputField(),
@@ -70,28 +72,10 @@ class _SignInScreenState extends State<SignInScreen> {
               maxLines: 1,
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: AppMargin.litterBig),
-            const PrimaryButton(text: 'Sign In'),
-            const SizedBox(height: AppMargin.litterBig),
-            Text(
-              'OR',
-              style: Theme.of(context).textTheme.subtitle1.copyWith(
-                  color: AppColor.lightBlueGray, fontWeight: FontWeight.w500),
-              maxLines: 1,
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: AppMargin.litterBig),
-            const SocialButton(
-              title: 'Continue with facebook',
-              image: 'assets/images/facebook.png',
-              color: AppColor.facebook,
-            ),
-            const SizedBox(height: AppMargin.big),
-            const SocialButton(
-              title: 'Continue with google',
-              image: 'assets/images/google.png',
-              color: AppColor.google,
-            ),
+            const SizedBox(height: AppMargin.litterBigger),
+            const PrimaryButton(text: 'SIGN IN'),
+            const SizedBox(height: AppMargin.litterBigger),
+            SocialLoginContainer(),
           ],
         ),
       ),
@@ -107,21 +91,29 @@ class _SignInScreenState extends State<SignInScreen> {
         keyboardAppearance: Brightness.light,
         keyboardType: TextInputType.emailAddress,
         maxLength: LimitText.emailAddressMaxLength,
-        style: Theme.of(context).textTheme.bodyText1.copyWith(color: AppColor.darkGrayHighlighted),
+        style: Theme.of(context)
+            .textTheme
+            .bodyText1
+            .copyWith(color: AppColor.darkGrayHighlighted),
         cursorColor: AppColor.darkGrayHighlighted,
         decoration: InputDecoration(
           alignLabelWithHint: true,
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5.0),
-            borderSide: const BorderSide(color: AppColor.borderTextField, width: 1),
+            borderSide:
+                const BorderSide(color: AppColor.borderTextField, width: 1),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5.0),
-            borderSide: const BorderSide(color: AppColor.borderTextField, width: 1),
+            borderSide:
+                const BorderSide(color: AppColor.borderTextField, width: 1),
           ),
           counterText: '',
           labelText: 'Email',
-          labelStyle: Theme.of(context).textTheme.bodyText1.copyWith(color: AppColor.darkGrayHighlighted),
+          labelStyle: Theme.of(context)
+              .textTheme
+              .bodyText1
+              .copyWith(color: AppColor.darkGrayHighlighted),
         ),
       ),
       const SizedBox(height: 20),
@@ -133,23 +125,35 @@ class _SignInScreenState extends State<SignInScreen> {
         keyboardAppearance: Brightness.light,
         keyboardType: TextInputType.visiblePassword,
         maxLength: LimitText.passwordMaxLength,
-        style: Theme.of(context).textTheme.bodyText1.copyWith(color: AppColor.darkGrayHighlighted),
+        style: Theme.of(context)
+            .textTheme
+            .bodyText1
+            .copyWith(color: AppColor.darkGrayHighlighted),
         cursorColor: AppColor.darkGrayHighlighted,
         decoration: InputDecoration(
           alignLabelWithHint: true,
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5.0),
-            borderSide: const BorderSide(color: AppColor.borderTextField, width: 1),
+            borderSide:
+                const BorderSide(color: AppColor.borderTextField, width: 1),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5.0),
-            borderSide: const BorderSide(color: AppColor.borderTextField, width: 1),
+            borderSide:
+                const BorderSide(color: AppColor.borderTextField, width: 1),
           ),
           counterText: '',
           labelText: 'Password',
-          labelStyle: Theme.of(context).textTheme.bodyText1.copyWith(color: AppColor.darkGrayHighlighted),
+          labelStyle: Theme.of(context)
+              .textTheme
+              .bodyText1
+              .copyWith(color: AppColor.darkGrayHighlighted),
         ),
       ),
     ]);
+  }
+
+  void _onPressSignUp() {
+    Navigator.pushNamed(context, RouteName.signUpPage);
   }
 }
