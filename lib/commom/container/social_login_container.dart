@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodedu/commom/button/social_login_button.dart';
 import 'package:foodedu/general/constant/app_constant.dart';
+import 'package:foodedu/general/constant/app_image_path.dart';
 import 'package:foodedu/general/constant/app_theme.dart';
 
 class SocialLoginContainer extends StatelessWidget {
@@ -18,13 +19,13 @@ class SocialLoginContainer extends StatelessWidget {
         const SizedBox(height: AppMargin.litterBigger),
         const SocialButton(
           title: 'Continue with facebook',
-          image: 'assets/images/facebook.png',
+          image: AppImagePath.facebook,
           color: AppColor.facebook,
         ),
         const SizedBox(height: AppMargin.big),
         const SocialButton(
           title: 'Continue with google',
-          image: 'assets/images/google.png',
+          image: AppImagePath.google,
           color: AppColor.google,
         )
       ],
