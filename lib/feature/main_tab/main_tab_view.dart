@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodedu/commom/image/nav_bar_image.dart';
+import 'package:foodedu/general/constant/app_image_path.dart';
 import 'package:foodedu/general/constant/app_theme.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -73,7 +74,7 @@ class _MainTabViewState extends State<MainTabView> {
                 GButton(
                   backgroundColor: AppColor.bgNavBar,
                   leading: NavBarImage(
-                    imagePath: 'assets/images/home.png',
+                    imagePath: AppImagePath.iconHome,
                     isSelected: _selectedIndex == 0,
                   ),
                   text: 'Home',
@@ -81,7 +82,7 @@ class _MainTabViewState extends State<MainTabView> {
                 GButton(
                   backgroundColor: AppColor.bgNavBar,
                   leading: NavBarImage(
-                    imagePath: 'assets/images/shopping_bag.png',
+                    imagePath: AppImagePath.iconShopping,
                     isSelected: _selectedIndex == 1,
                   ),
                   text: 'Orders',
@@ -89,7 +90,7 @@ class _MainTabViewState extends State<MainTabView> {
                 GButton(
                   backgroundColor: AppColor.bgNavBar,
                   leading: NavBarImage(
-                    imagePath: 'assets/images/heart.png',
+                    imagePath: AppImagePath.iconHeart,
                     isSelected: _selectedIndex == 2,
                   ),
                   text: 'Saved',
@@ -97,7 +98,7 @@ class _MainTabViewState extends State<MainTabView> {
                 GButton(
                   backgroundColor: AppColor.bgNavBar,
                   leading: NavBarImage(
-                    imagePath: 'assets/images/user.png',
+                    imagePath: AppImagePath.iconUser,
                     isSelected: _selectedIndex == 3,
                   ),
                   text: 'Profile',
