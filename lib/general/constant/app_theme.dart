@@ -36,6 +36,7 @@ class AppColor {
   static const Color lightGray = Color(0xffc3c3c3);
   static const Color offWhite = Color(0xffF6F6F6);
   static const Color white = Colors.white;
+  static const Color line = Color(0xffEDEDED);
 
   static const Color green = Color(0xff3ABC5E);
   static const Color red = Color(0xffF43E3E);

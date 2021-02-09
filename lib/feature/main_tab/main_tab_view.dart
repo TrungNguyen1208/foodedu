@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodedu/commom/image/nav_bar_image.dart';
+import 'package:foodedu/feature/module_profile/profile_tab/profile_tab_screen.dart';
 import 'package:foodedu/general/constant/app_image_path.dart';
 import 'package:foodedu/general/constant/app_theme.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -11,13 +12,15 @@ class MainTabView extends StatefulWidget {
 
 class _MainTabViewState extends State<MainTabView> {
   int _selectedIndex = 0;
-
-  final PageController _pageController = PageController(initialPage: 0, keepPage: true,);
-  static const List<Color> colors = [
-    Colors.purple,
-    Colors.pink,
-    Colors.amber,
-    Colors.teal
+  final PageController _pageController = PageController(
+    initialPage: 0,
+    keepPage: true,
+  );
+  final List<Widget> _pages = [
+    const SizedBox(),
+    const SizedBox(),
+    const SizedBox(),
+    ProfileTabScreen(),
   ];
 
   @override
@@ -41,9 +44,7 @@ class _MainTabViewState extends State<MainTabView> {
         onPageChanged: _onPageChanged,
         controller: _pageController,
         itemBuilder: (context, position) {
-          return Container(
-            color: colors[position],
-          );
+          return _pages[position];
         },
       ),
       bottomNavigationBar: Container(
@@ -72,36 +73,36 @@ class _MainTabViewState extends State<MainTabView> {
               ),
               tabs: <GButton>[
                 GButton(
+                  text: 'Home',
                   backgroundColor: AppColor.bgNavBar,
                   leading: NavBarImage(
                     imagePath: AppImagePath.iconHome,
                     isSelected: _selectedIndex == 0,
                   ),
-                  text: 'Home',
                 ),
                 GButton(
+                  text: 'Orders',
                   backgroundColor: AppColor.bgNavBar,
                   leading: NavBarImage(
                     imagePath: AppImagePath.iconShopping,
                     isSelected: _selectedIndex == 1,
                   ),
-                  text: 'Orders',
                 ),
                 GButton(
+                  text: 'Saved',
                   backgroundColor: AppColor.bgNavBar,
                   leading: NavBarImage(
                     imagePath: AppImagePath.iconHeart,
                     isSelected: _selectedIndex == 2,
                   ),
-                  text: 'Saved',
                 ),
                 GButton(
+                  text: 'Profile',
                   backgroundColor: AppColor.bgNavBar,
                   leading: NavBarImage(
                     imagePath: AppImagePath.iconUser,
                     isSelected: _selectedIndex == 3,
                   ),
-                  text: 'Profile',
                 ),
               ],
               selectedIndex: _selectedIndex,

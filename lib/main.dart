@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/screenutil_init.dart';
 
 import 'feature/main_tab/main_tab_view.dart';
 import 'general/constant/app_theme.dart';
@@ -20,12 +21,15 @@ class FoodApp extends StatelessWidget {
           currentFocus.focusedChild.unfocus();
         }
       },
-      child: MaterialApp(
-        title: 'Foodude',
-        debugShowCheckedModeBanner: false,
-        theme: AppTheme.lightTheme,
-        home: MainTabView(),
-        onGenerateRoute: Routes.buildRoutes,
+      child: ScreenUtilInit(
+        allowFontScaling: false,
+        builder: () => MaterialApp(
+          title: 'Foodude',
+          debugShowCheckedModeBanner: false,
+          theme: AppTheme.lightTheme,
+          home: MainTabView(),
+          onGenerateRoute: Routes.buildRoutes,
+        ),
       ),
     );
   }
