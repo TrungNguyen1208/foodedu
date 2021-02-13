@@ -24,7 +24,7 @@ class ProfileHeaderView extends StatelessWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.25),
+            color: Colors.black.withOpacity(0.2),
             blurRadius: 4,
             offset: const Offset(0, 4),
           )
@@ -33,37 +33,7 @@ class ProfileHeaderView extends StatelessWidget {
       child: Container(
         child: Stack(
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 55),
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      height: 90,
-                      width: 90,
-                      decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage(AppImagePath.avatar),
-                          )),
-                    ),
-                    const SizedBox(height: AppMargin.litterBigger),
-                    Text(
-                      'Ocoho Pinocchio',
-                      style: Theme.of(context).textTheme.headline5,
-                    ),
-                    const SizedBox(height: AppMargin.normal),
-                    Text('(424) 545-1818',
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText2
-                            .copyWith(color: AppColor.lightBlueGray))
-                  ],
-                ),
-              ),
-            ),
+            _buildProfileInfo(context),
             Positioned(
               bottom: -136 / 2,
               right: -136 / 2,
@@ -91,6 +61,40 @@ class ProfileHeaderView extends StatelessWidget {
                 onPressed: () {},
               ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildProfileInfo(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 55),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              height: 90,
+              width: 90,
+              decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage(AppImagePath.avatar),
+                  )),
+            ),
+            const SizedBox(height: AppMargin.litterBigger),
+            Text(
+              'Ocoho Pinocchio',
+              style: Theme.of(context).textTheme.headline5,
+            ),
+            const SizedBox(height: AppMargin.normal),
+            Text('(424) 545-1818',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText2
+                    .copyWith(color: AppColor.lightBlueGray))
           ],
         ),
       ),

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:foodedu/commom/image/nav_bar_image.dart';
+import 'package:foodedu/feature/module_home/home_tab/home_tab_screen.dart';
+import 'package:foodedu/feature/module_order/order_tab/order_tab_screen.dart';
 import 'package:foodedu/feature/module_profile/profile_tab/profile_tab_screen.dart';
+import 'package:foodedu/feature/module_saved/saved_tab/saved_tab_screen.dart';
 import 'package:foodedu/general/constant/app_image_path.dart';
 import 'package:foodedu/general/constant/app_theme.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -17,9 +20,9 @@ class _MainTabViewState extends State<MainTabView> {
     keepPage: true,
   );
   final List<Widget> _pages = [
-    const SizedBox(),
-    const SizedBox(),
-    const SizedBox(),
+    HomeTabScreen(),
+    OrderTabScreen(),
+    SavedTabScreen(),
     ProfileTabScreen(),
   ];
 
