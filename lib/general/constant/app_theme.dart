@@ -47,6 +47,7 @@ class AppColor {
 
   static const Color defaultText = Color(0xff4F585E);
   static const Color borderTextField = Color(0xffa7aaab);
+  static const Color borderSearch = Color(0xffDBDFE3);
 
   static const Color bgNavBar = Color(0xffFEF0EB);
 }
