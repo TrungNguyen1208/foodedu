@@ -13,16 +13,24 @@ class AppTheme {
         headline4: TextStyle(fontSize: 27.0, fontWeight: FontWeight.w600, fontFamily: AppFont.aveNextLT, color: AppColor.defaultText),
         headline5: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600, fontFamily: AppFont.aveNextLT, color: AppColor.defaultText),
         headline6: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w500, fontFamily: AppFont.aveNextLT, color: AppColor.defaultText),
-        subtitle1: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, fontFamily: AppFont.aveNextLT, color: AppColor.defaultText),
+        subtitle1: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, fontFamily: AppFont.aveNextLT, color: AppColor.darkGrayHighlighted),
         bodyText1: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400, fontFamily: AppFont.aveNextLT, color: AppColor.defaultText),
         bodyText2: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w500, fontFamily: AppFont.aveNextLT, color: AppColor.defaultText),
-        caption: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500, fontFamily: AppFont.aveNextLT, color: AppColor.defaultText),
+        caption: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500, fontFamily: AppFont.aveNextLT, color: AppColor.gray),
     ),
   );
 }
 
 class AppFont {
   static const String aveNextLT = 'AvenirNextLTPro';
+}
+
+class AppShadow {
+  static const BoxShadow restaurantCard= BoxShadow(
+      color: Color.fromRGBO(0, 0, 0, 0.1),
+      offset: Offset(0,2),
+      blurRadius: 18
+  );
 }
 
 class AppColor {
@@ -50,4 +58,5 @@ class AppColor {
   static const Color borderSearch = Color(0xffDBDFE3);
 
   static const Color bgNavBar = Color(0xffFEF0EB);
+  static const Color categoryText = Color(0xff283743);
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodedu/general/constant/app_constant.dart';
+import 'package:foodedu/general/constant/app_image_path.dart';
 import 'package:foodedu/general/constant/app_theme.dart';
 
 class SearchContainer extends StatelessWidget {
@@ -31,10 +32,11 @@ class SearchContainer extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
           child: Row(
             children: <Widget>[
-              const Icon(
-                Icons.search,
+              Image.asset(
+                AppImagePath.search,
                 color: AppColor.gray,
-                size: 20.0,
+                width: 20.0,
+                height: 20.0,
               ),
               const SizedBox(width: AppMargin.big),
               Expanded(
