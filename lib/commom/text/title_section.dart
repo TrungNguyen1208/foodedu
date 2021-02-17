@@ -33,13 +33,16 @@ class TitleSection extends StatelessWidget {
           ),
           const Spacer(),
           if (isShowViewAll)
-            Text(
-              'View all',
-              maxLines: 1,
-              style: Theme.of(context)
-                  .textTheme
-                  .caption
-                  .copyWith(color: AppColor.primary),
+            GestureDetector(
+              onTap: onPressAll ?? () {},
+              child: Text(
+                'View all',
+                maxLines: 1,
+                style: Theme.of(context)
+                    .textTheme
+                    .caption
+                    .copyWith(color: AppColor.primary),
+              ),
             ),
         ],
       ),

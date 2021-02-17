@@ -28,4 +28,6 @@ class AppImagePath {
   static const String food1 = '${folderImages}food1.png';
   static const String food2 = '${folderImages}food2.png';
   static const String food3 = '${folderImages}food3.png';
+  static const String food4 = '${folderImages}food4.png';
+  static const String food5 = '${folderImages}food5.png';
 }

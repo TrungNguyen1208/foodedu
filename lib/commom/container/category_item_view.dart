@@ -3,7 +3,7 @@ import 'package:foodedu/general/constant/app_constant.dart';
 import 'package:foodedu/general/constant/app_image_path.dart';
 import 'package:foodedu/general/constant/app_theme.dart';
 
-class CategoryView extends StatelessWidget {
+class CategoryItemView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(

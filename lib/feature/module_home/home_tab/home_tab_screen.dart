@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodedu/commom/card/home_food_card.dart';
-import 'package:foodedu/commom/container/category_view.dart';
+import 'package:foodedu/commom/container/category_item_view.dart';
+import 'package:foodedu/commom/container/poppular_cuisine_item.dart';
 import 'package:foodedu/commom/container/search_container.dart';
 import 'package:foodedu/commom/text/title_section.dart';
 import 'package:foodedu/general/constant/app_constant.dart';
@@ -34,7 +35,7 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
           _buildPopularList(),
           _buildCategoriesList(),
           _buildNearbyList(),
-          _buildPoppularCuisines(),
+          _buildPoppularCuisinesList(),
         ],
       ),
     );
@@ -156,7 +157,7 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
             separatorBuilder: (context, index) =>
             const SizedBox(width: 20),
             itemBuilder: (BuildContext context, int index) {
-              return CategoryView();
+              return CategoryItemView();
             },
           ),
         ),
@@ -195,10 +196,33 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
     );
   }
 
-  Widget _buildPoppularCuisines() {
+  Widget _buildPoppularCuisinesList() {
     return Column(
-      children: const <Widget>[
-        TitleSection(title: 'Poppular Cuisines'),
+      children: <Widget>[
+        const TitleSection(title: 'Poppular Cuisines'),
+        Container(
+          width: double.infinity,
+          height: 136,
+          alignment: Alignment.centerLeft,
+          padding: const EdgeInsets.only(
+            top: AppMargin.big,
+            bottom: AppMargin.litterBigger,
+            left: AppMargin.paddingContentHoz,
+            right: AppMargin.paddingContentHoz,
+          ),
+          child: ListView.separated(
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            physics: const AlwaysScrollableScrollPhysics(),
+            clipBehavior: Clip.none,
+            itemCount: 5,
+            separatorBuilder: (context, index) =>
+            const SizedBox(width: AppMargin.big),
+            itemBuilder: (BuildContext context, int index) {
+              return PoppularCuisineItem();
+            },
+          ),
+        ),
       ],
     );
   }
