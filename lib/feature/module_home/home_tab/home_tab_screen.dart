@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodedu/commom/card/home_food_card.dart';
+import 'package:foodedu/commom/container/banner_item_view.dart';
 import 'package:foodedu/commom/container/category_item_view.dart';
 import 'package:foodedu/commom/container/poppular_cuisine_item.dart';
 import 'package:foodedu/commom/container/search_container.dart';
@@ -23,15 +24,13 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
           const SizedBox(height: AppMargin.litterBigger),
           _buildWelcomeHeader(),
           Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: AppMargin.paddingContentHoz,
-                vertical: AppMargin.litterBigger),
+            padding: const EdgeInsets.symmetric(horizontal: AppMargin.paddingContentHoz, vertical: AppMargin.litterBigger),
             child: SearchContainer(
               placeHolder: 'Search for restaurants, dishes...',
               onPress: _onPressSearch,
             ),
           ),
-          const SizedBox(height: AppMargin.bigger),
+          _buildBannerList(),
           _buildPopularList(),
           _buildCategoriesList(),
           _buildNearbyList(),
@@ -100,6 +99,49 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildBannerList() {
+    return Column(
+      children: <Widget>[
+        Container(
+          width: double.infinity,
+          height: 122,
+          alignment: Alignment.centerLeft,
+          margin: const EdgeInsets.only(
+            left: AppMargin.paddingContentHoz,
+            right: AppMargin.paddingContentHoz,
+          ),
+          child: ListView.separated(
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            physics: const AlwaysScrollableScrollPhysics(),
+            clipBehavior: Clip.none,
+            itemCount: 5,
+            separatorBuilder: (context, index) =>
+            const SizedBox(width: AppMargin.slightlyBig),
+            itemBuilder: (BuildContext context, int index) {
+              return BannerItemView();
+            },
+          ),
+        ),
+        const SizedBox(height: AppMargin.slightlyBig),
+        const SizedBox(
+          width: 60,
+          height: 6.0,
+          child: ClipRRect(
+            borderRadius: BorderRadius.all(Radius.circular(3.0)),
+            child: LinearProgressIndicator(
+              minHeight: 6.0,
+              backgroundColor: AppColor.lightGray,
+              valueColor: AlwaysStoppedAnimation<Color>(AppColor.primary),
+              value: 0.4,
+            ),
+          ),
+        ),
+        const SizedBox(height: AppMargin.bigger),
+      ],
     );
   }
 
