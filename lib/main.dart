@@ -22,6 +22,7 @@ class FoodApp extends StatelessWidget {
         }
       },
       child: ScreenUtilInit(
+        designSize: const Size(375.0, 812.0),
         allowFontScaling: false,
         builder: () => MaterialApp(
           title: 'Foodude',

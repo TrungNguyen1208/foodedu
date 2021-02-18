@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodedu/general/constant/app_constant.dart';
 import 'package:foodedu/general/constant/app_image_path.dart';
 import 'package:foodedu/general/constant/app_theme.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileHeaderView extends StatelessWidget {
   static const BoxDecoration _boxCircleGradient = BoxDecoration(
@@ -19,7 +20,7 @@ class ProfileHeaderView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 265,
+      height: 265.h,
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
@@ -75,8 +76,8 @@ class ProfileHeaderView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              height: 90,
-              width: 90,
+              height: 87.h,
+              width: 87.h,
               decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(

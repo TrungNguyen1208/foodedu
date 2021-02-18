@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodedu/general/constant/app_image_path.dart';
 import 'package:foodedu/general/constant/app_theme.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ListTitleButton extends StatelessWidget {
   final String title;
@@ -24,7 +25,7 @@ class ListTitleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 44,
+      height: 44.h,
       child: FlatButton(
         onPressed: (onPress != null) ? onPress : () {},
         highlightColor: Colors.transparent,
