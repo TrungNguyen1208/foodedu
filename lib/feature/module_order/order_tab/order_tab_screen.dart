@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:foodedu/commom/tabbar/circle_tab_indicator.dart';
 import 'package:foodedu/general/constant/app_theme.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OrderTabScreen extends StatefulWidget {
   @override
@@ -10,25 +12,37 @@ class _OrderTabScreenState extends State<OrderTabScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    final textTheme = Theme.of(context).textTheme;
+    final tabTextSize =  ScreenUtil().setSp(15.0);
+
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         appBar: AppBar(
-          flexibleSpace: const SafeArea(
+          backgroundColor: AppColor.white,
+          elevation: 1,
+          flexibleSpace: SafeArea(
             child: TabBar(
-              tabs: [
-                Tab(icon: Icon(Icons.directions_car)),
-                Tab(icon: Icon(Icons.directions_transit)),
-                Tab(icon: Icon(Icons.directions_bike)),
+              labelColor: AppColor.darkGrayHighlighted,
+              unselectedLabelColor: AppColor.lightGray,
+              labelStyle: textTheme.bodyText2.copyWith(fontWeight: FontWeight.w600, fontSize: tabTextSize),
+              indicator: CircleTabIndicator(color: AppColor.primary, radius: 4),
+              tabs: const <Tab>[
+                Tab(text: 'Ongoing'),
+                Tab(text: 'Upcoming'),
+                Tab(text: 'History'),
+                Tab(text: 'Bag'),
               ],
             ),
           ),
         ),
-        body: const TabBarView(
+        body: TabBarView(
           children: [
-            Icon(Icons.directions_car),
-            Icon(Icons.directions_transit),
-            Icon(Icons.directions_bike),
+            Container(),
+            Container(),
+            Container(),
+            Container(),
           ],
         ),
       ),
