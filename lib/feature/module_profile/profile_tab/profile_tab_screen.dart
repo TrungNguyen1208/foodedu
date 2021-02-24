@@ -4,8 +4,14 @@ import 'package:foodedu/commom/container/profile_header_view.dart';
 import 'package:foodedu/general/constant/app_constant.dart';
 import 'package:foodedu/general/constant/app_image_path.dart';
 import 'package:foodedu/general/constant/app_theme.dart';
+import 'package:foodedu/routues/routue_name.dart';
 
-class ProfileTabScreen extends StatelessWidget {
+class ProfileTabScreen extends StatefulWidget {
+  @override
+  _ProfileTabScreenState createState() => _ProfileTabScreenState();
+}
+
+class _ProfileTabScreenState extends State<ProfileTabScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,45 +37,34 @@ class ProfileTabScreen extends StatelessWidget {
             vertical: AppMargin.big, horizontal: 0),
         scrollDirection: Axis.vertical,
         physics: const ClampingScrollPhysics(),
-        children: const <Widget>[
-          ListTitleButton(
+        children: <Widget>[
+          const ListTitleButton(
             title: 'My voucher',
             image: AppImagePath.iconVoucher,
           ),
-          SizedBox(
-            height: 1,
-            width: double.infinity,
-            child: ColoredBox(color: AppColor.line),
-          ),
-          ListTitleButton(
+          _buildLineSpace(),
+          const ListTitleButton(
             title: 'Payment methods',
             image: AppImagePath.iconCreditCard,
           ),
-          SizedBox(
-            height: 1,
-            width: double.infinity,
-            child: ColoredBox(color: AppColor.line),
-          ),
+          _buildLineSpace(),
           ListTitleButton(
             title: 'Profile & Address',
             image: AppImagePath.iconUser,
+            onPress: _goToProfileAddressScreen,
           ),
-          SizedBox(height: AppMargin.slightlyBig),
-          ListTitleButton(
+          const SizedBox(height: AppMargin.slightlyBig),
+          const ListTitleButton(
             title: 'Help Center',
             image: AppImagePath.iconSupport,
           ),
-          SizedBox(
-            height: 1,
-            width: double.infinity,
-            child: ColoredBox(color: AppColor.line),
-          ),
-          ListTitleButton(
+          _buildLineSpace(),
+          const ListTitleButton(
             title: 'About us',
             image: AppImagePath.iconInfo,
           ),
-          SizedBox(height: AppMargin.big),
-          ListTitleButton(
+          const SizedBox(height: AppMargin.big),
+          const ListTitleButton(
             title: 'Log Out',
             image: AppImagePath.logOut,
             textColor: AppColor.primary,
@@ -79,5 +74,17 @@ class ProfileTabScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Widget _buildLineSpace() {
+    return const SizedBox(
+      height: 1,
+      width: double.infinity,
+      child: ColoredBox(color: AppColor.line),
+    );
+  }
+
+  void _goToProfileAddressScreen() {
+    Navigator.pushNamed(context, RouteName.profileAddressPage);
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-// ignore: avoid_classes_with_only_static_members
 class AppTheme {
   static final ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
@@ -8,15 +7,77 @@ class AppTheme {
     primaryColor: AppColor.primary,
     scaffoldBackgroundColor: Colors.white,
     visualDensity: VisualDensity.adaptivePlatformDensity,
+    primaryTextTheme: const TextTheme(
+      bodyText1: TextStyle(
+        fontSize: 16.0,
+        fontWeight: FontWeight.w400,
+        fontFamily: AppFont.aveNextLT,
+        color: AppColor.defaultText,
+      ),
+    ),
     textTheme: const TextTheme(
-        headline3: TextStyle(fontSize: 40.0, fontWeight: FontWeight.w500, fontFamily: AppFont.aveNextLT, color: AppColor.defaultText),
-        headline4: TextStyle(fontSize: 27.0, fontWeight: FontWeight.w600, fontFamily: AppFont.aveNextLT, color: AppColor.defaultText),
-        headline5: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600, fontFamily: AppFont.aveNextLT, color: AppColor.defaultText),
-        headline6: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w500, fontFamily: AppFont.aveNextLT, color: AppColor.defaultText),
-        subtitle1: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, fontFamily: AppFont.aveNextLT, color: AppColor.darkGrayHighlighted),
-        bodyText1: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400, fontFamily: AppFont.aveNextLT, color: AppColor.defaultText),
-        bodyText2: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w500, fontFamily: AppFont.aveNextLT, color: AppColor.defaultText),
-        caption: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500, fontFamily: AppFont.aveNextLT, color: AppColor.gray),
+      headline3: TextStyle(
+        fontSize: 40.0,
+        fontWeight: FontWeight.w500,
+        fontFamily: AppFont.aveNextLT,
+        color: AppColor.defaultText,
+      ),
+      headline4: TextStyle(
+        fontSize: 27.0,
+        fontWeight: FontWeight.w600,
+        fontFamily: AppFont.aveNextLT,
+        color: AppColor.defaultText,
+      ),
+      headline5: TextStyle(
+        fontSize: 20.0,
+        fontWeight: FontWeight.w600,
+        fontFamily: AppFont.aveNextLT,
+        color: AppColor.defaultText,
+      ),
+      headline6: TextStyle(
+        fontSize: 20.0,
+        fontWeight: FontWeight.w500,
+        fontFamily: AppFont.aveNextLT,
+        color: AppColor.defaultText,
+      ),
+      subtitle1: TextStyle(
+        fontSize: 16.0,
+        fontWeight: FontWeight.w600,
+        fontFamily: AppFont.aveNextLT,
+        color: AppColor.darkGrayHighlighted,
+      ),
+      bodyText1: TextStyle(
+        fontSize: 16.0,
+        fontWeight: FontWeight.w400,
+        fontFamily: AppFont.aveNextLT,
+        color: AppColor.defaultText,
+      ),
+      bodyText2: TextStyle(
+        fontSize: 15.0,
+        fontWeight: FontWeight.w500,
+        fontFamily: AppFont.aveNextLT,
+        color: AppColor.defaultText,
+      ),
+      caption: TextStyle(
+        fontSize: 12.0,
+        fontWeight: FontWeight.w500,
+        fontFamily: AppFont.aveNextLT,
+        color: AppColor.gray,
+      ),
+    ),
+    appBarTheme: const AppBarTheme(
+      color: AppColor.white,
+      elevation: 1,
+      centerTitle: true,
+      textTheme: TextTheme(
+        headline6: TextStyle(
+          fontSize: 20.0,
+          fontWeight: FontWeight.w500,
+          fontFamily: AppFont.aveNextLT,
+          color: AppColor.defaultText,
+        ),
+      ),
+      iconTheme: IconThemeData(color: AppColor.darkGrayHighlighted),
     ),
   );
 }
@@ -26,11 +87,10 @@ class AppFont {
 }
 
 class AppShadow {
-  static const BoxShadow restaurantCard= BoxShadow(
+  static const BoxShadow restaurantCard = BoxShadow(
       color: Color.fromRGBO(0, 0, 0, 0.1),
-      offset: Offset(0,2),
-      blurRadius: 18
-  );
+      offset: Offset(0, 2),
+      blurRadius: 18);
 }
 
 class AppColor {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodedu/feature/authen/sign_in/sign_in_screen.dart';
 import 'package:foodedu/feature/authen/sign_up/sign_up_screen.dart';
+import 'package:foodedu/feature/module_profile/profile_address/profile_address_screen.dart';
 
 import 'routue_name.dart';
 
@@ -11,6 +12,8 @@ class Routes {
         return buildRoute(settings, SignInScreen());
       case RouteName.signUpPage:
         return buildRoute(settings, SignUpScreen());
+      case RouteName.profileAddressPage:
+        return buildRoute(settings, ProfileAddressScreen());
       default:
       //If there is no such named route in the switch statement
         return _errorRoute();
