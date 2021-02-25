@@ -3,15 +3,16 @@ import 'package:foodedu/general/constant/app_constant.dart';
 import 'package:foodedu/general/constant/app_theme.dart';
 
 class TitleSection extends StatelessWidget {
-  final String title;
-  final bool isShowViewAll;
-  final VoidCallback onPressAll;
+  final String title, rightText;
+  final bool isShowRightText;
+  final VoidCallback onPressRightText;
 
   const TitleSection({
     Key key,
     @required this.title,
-    this.isShowViewAll = true,
-    this.onPressAll,
+    this.rightText = 'View all',
+    this.isShowRightText = true,
+    this.onPressRightText,
   }) : super(key: key);
 
   @override
@@ -26,18 +27,16 @@ class TitleSection extends StatelessWidget {
           Text(
             title ?? '',
             maxLines: 1,
-            style: Theme.of(context)
-                .textTheme
-                .headline5
-                .copyWith(color: AppColor.darkGrayHighlighted),
+            style: Theme.of(context).textTheme.headline5,
           ),
           const Spacer(),
-          if (isShowViewAll)
+          if (isShowRightText)
             GestureDetector(
-              onTap: onPressAll ?? () {},
+              onTap: onPressRightText ?? () {},
               child: Text(
-                'View all',
+                rightText,
                 maxLines: 1,
+                textAlign: TextAlign.right,
                 style: Theme.of(context)
                     .textTheme
                     .caption

@@ -179,7 +179,7 @@ class _HomeTabScreenState extends State<HomeTabScreen> {
   Widget _buildCategoriesList() {
     return Column(
       children: <Widget>[
-        const TitleSection(title: 'Categories', isShowViewAll: false),
+        const TitleSection(title: 'Categories', isShowRightText: false),
         Container(
           width: double.infinity,
           height: 142.0,

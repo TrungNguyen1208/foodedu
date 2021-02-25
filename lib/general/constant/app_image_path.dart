@@ -24,6 +24,8 @@ class AppImagePath {
 
   static const String avatar = '${folderImages}avatar.png';
   static const String notificationBadge = '${folderImages}notification_badge.png';
+  static const String circleCamera = '${folderImages}circle_camera.png';
+  static const String mapPin = '${folderImages}map_pin.png';
 
   static const String food1 = '${folderImages}food1.png';
   static const String food2 = '${folderImages}food2.png';

@@ -49,7 +49,7 @@ linter:
     - prefer_spread_collections
     - prefer_constructors_over_static_methods
     - empty_statements
-    - empty_catches
+#    - empty_catches
     - empty_constructor_bodies
     - unnecessary_getters_setters
     - file_names

@@ -76,8 +76,8 @@ class ProfileHeaderView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              height: 87.h,
-              width: 87.h,
+              height: 87.w,
+              width: 87.w,
               decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(

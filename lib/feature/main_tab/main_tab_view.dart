@@ -6,6 +6,7 @@ import 'package:foodedu/feature/module_profile/profile_tab/profile_tab_screen.da
 import 'package:foodedu/feature/module_saved/saved_tab/saved_tab_screen.dart';
 import 'package:foodedu/general/constant/app_image_path.dart';
 import 'package:foodedu/general/constant/app_theme.dart';
+import 'package:foodedu/general/constant/app_theme_text.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class MainTabView extends StatefulWidget {

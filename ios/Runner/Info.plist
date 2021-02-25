@@ -39,5 +39,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+  <key>NSCameraUsageDescription</key>
+  <string>Foodedu would like to access your camera to capture a photo and record a food video.</string>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>Foodedu would like to access your microphone to record a food video.</string>
+  <key>NSPhotoLibraryUsageDescription</key>
+  <string>Foodedu would like to access your photo gallery for your profile photo. Your photos wont be shared without your permission.</string>
 </dict>
 </plist>
