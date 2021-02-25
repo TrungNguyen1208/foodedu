@@ -29,10 +29,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   void dispose() {
-    super.dispose();
     _focusEmail.dispose();
     _focusPassword.dispose();
     _focusConfirmPass.dispose();
+    super.dispose();
   }
 
   void _onFocusNodeEvent() {

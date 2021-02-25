@@ -54,4 +54,5 @@ class AppColor {
 
   static const Color bgNavBar = Color(0xffFEF0EB);
   static const Color categoryText = Color(0xff283743);
+  static const Color disableButton = Color(0xffE4E4E4);
 }

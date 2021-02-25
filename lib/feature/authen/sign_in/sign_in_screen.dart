@@ -25,9 +25,9 @@ class _SignInScreenState extends State<SignInScreen> {
 
   @override
   void dispose() {
-    super.dispose();
     _focusEmail.dispose();
     _focusPassword.dispose();
+    super.dispose();
   }
 
   void _onFocusNodeEvent() {
