@@ -19,6 +19,33 @@ class ValidateUtil {
     return null;
   }
 
+  static String validateFirstName(String firstName) {
+    if (firstName == null || firstName.trim().isEmpty) {
+      return 'Please input your first name.';
+    }
+    if (firstName.length > LimitText.firstNameMaxLength) {
+      return 'First name must not exceed ${LimitText.firstNameMaxLength} characters.';
+    }
+    return null;
+  }
+
+  static String validateLastName(String lastName) {
+    if (lastName == null || lastName.trim().isEmpty) {
+      return 'Please input your last name.';
+    }
+    if (lastName.length > LimitText.lastNameMaxLength) {
+      return 'Last name must not exceed ${LimitText.lastNameMaxLength} characters.';
+    }
+    return null;
+  }
+
+  static String validateGender(String gender) {
+    if (gender == null || gender.trim().isEmpty) {
+      return 'Please input your gender.';
+    }
+    return null;
+  }
+
   static String validateRegisterPassword(String password) {
     if (password == null || password.isEmpty) {
       return 'Please input your password.';

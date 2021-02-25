@@ -36,8 +36,12 @@ class LimitText {
   static const int passwordMinLength = 6;
   static const int passwordMaxLength = 32;
   static const int emailAddressMaxLength = 320;
+
+  static const int firstNameMinLength = 3;
   static const int firstNameMaxLength = 20;
+  static const int lastNameMinLength = 3;
   static const int lastNameMaxLength = 20;
+
   static const int phoneNumberMaxLength = 20;
   static const int searchKeywordMaxLength = 128;
   static const int emailAddressVerificationCodeLength = 6;
